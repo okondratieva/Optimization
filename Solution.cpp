@@ -35,18 +35,20 @@ double foo_bar(my_vector *v)
 	return tmp*tmp2*tmp3*tmp4*tmp5*tmp6*tmp7*tmp8;
 }
 
+
+
 double a[LENGTH];
 my_vector v = { LENGTH, a };
 
 int main() {
 	double res;
-
+	int i;
 	for (i = 0; i < LENGTH; i++)
 		a[i] = i / 2 + 1;
 
 	double start = omp_get_wtime();
 	for (int j = 0; j<100; j++)
-		res=foo_bar(&v);
+		
 	double finish = omp_get_wtime();
 
 	std::cout << "time: " << (finish - start) / 100 << std::endl;
