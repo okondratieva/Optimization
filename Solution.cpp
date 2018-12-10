@@ -14,11 +14,13 @@ long my_vector_len(my_vector *v) {
 double foo_bar(my_vector *v)
 {
 	long i, len = my_vector_len(v);
-	double tmp = 1;
-	for (i = 0; i < len; i++) {
+
+	double tmp = 1, tmp2 = 1;
+	for (i = 0; i < lim; i += 2) {
 		tmp *= v->data[i];
+		tmp2 *= v->data[i + 1];
 	}
-	return tmp;
+	return tmp * tmp2;
 }
 
 double a[LENGTH];
