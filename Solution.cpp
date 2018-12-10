@@ -13,9 +13,9 @@ long my_vector_len(my_vector *v) {
 
 void foo_bar(my_vector *v, double *res)
 {
-	long i;
+	long i, len = my_vector_len(v);
 	*res = 1;
-	for (i = 0; i < my_vector_len(v); i++) {
+	for (i = 0; i < len; i++) {
 		*res *= v->data[i];
 	}
 }
